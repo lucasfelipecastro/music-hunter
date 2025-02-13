@@ -18,11 +18,11 @@ def widgets():
     
     st.markdown(
         """
-        <h1 style="font-family: 'Times New Roman', serif; color: rgb(10, 44, 28); text-align: center;">
-            Music Hunter
+        <h1 style="font-family: 'Times New Roman', serif; color: rgb(10, 44, 20);  text-align: center; font-size: 70px;">
+            <b>Music Hunter</b>
         </h1>
-        
-        <p style="font-family: 'Times New Roman', serif; color: #555; text-align: center;">
+
+        <p style="font-family: 'Times New Roman', serif; color: white; text-align: center; font-size: 19px;">
             Discover and explore your favorite song lyrics in seconds, like a hunter finding its prey!
         </p>
         """, unsafe_allow_html=True)
@@ -46,20 +46,33 @@ def search_button(band, music):
 def footer():
     st.markdown("""
     <div style="text-align: center; margin-bottom: 10px;">
-        <p style="font-size: 16px; color: #555;">Developed by Lucas Felipe</p>
+        <p style="font-size: 19px; color: white;">Developed by Lucas Felipe</p>
     </div>
                 
     <div style="display: flex; justify-content: center; gap: 20px;">
         <a href="https://github.com/lucasfelipecastro" target="_blank">
-            <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" width="40" alt="GitHub">
+            <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" width="80" alt="GitHub">
         </a>
         <a href="https://www.linkedin.com/in/lucasfelipecastro" target="_blank">
-            <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000" width="40" alt="LinkedIn">
+            <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000" width="80" alt="LinkedIn">
         </a>
     </div>
                 """, unsafe_allow_html=True)
+    
+def add_background():    
+    st.markdown(f"""
+        <style>
+            .stApp {{
+                background-color: #818589;
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }}
+        </style>
+    """, unsafe_allow_html=True)
 
 if __name__ == '__main__':
+    add_background()
     widgets()
     band, music = inputs()
     search_button(band, music)
