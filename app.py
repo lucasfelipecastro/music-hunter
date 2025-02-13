@@ -12,6 +12,12 @@ def search_lyrics(band, music):
 
 def widgets():
     image_path = os.path.join(r'C:\techWin11\pythonProjects\music-hunter\assets\logo.jpg')
+
     if os.path.exists(image_path):
         st.image(image_path, width=300)
     st.title('Music Hunter')
+
+def inputs():
+    band = st.text_input('Enter the band name', key='band')
+    music = st.text_input('Enter the music name', key='music')
+    
