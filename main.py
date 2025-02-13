@@ -11,7 +11,7 @@ def search_lyrics(band, music):
     return 'Lyrics not found'
 
 def widgets():
-    image_path = os.path.join(r'C:\techWin11\pythonProjects\music-hunter\assets\logo.jpg')
+    image_path = "assets/logo.jpg"
 
     if os.path.exists(image_path):
         st.image(image_path)
@@ -28,16 +28,16 @@ def widgets():
         """, unsafe_allow_html=True)
                 
 def inputs():
-    band = st.text_input('Enter the band name: ', key='band')
-    music = st.text_input('Enter the music name: ', key='music')
+    band = st.text_input('Enter the band name: ')
+    music = st.text_input('Enter the music name: ')
     return band, music
 
 def search_button(band, music):
-    search = st.button('Search', key='search')
+    search = st.button('🔍 Search')
     
     if search:
         lyrics = search_lyrics(band, music)
-        if lyrics != 'Lyrics not found':
+        if lyrics and lyrics != 'Lyrics not found':
             st.success('Success!')
             st.write(lyrics)
         else:
@@ -45,19 +45,17 @@ def search_button(band, music):
 
 def footer():
     st.markdown("""
-    <div style="text-align: center; margin-bottom: 10px;">
-        <p style="font-size: 19px; color: white;">Developed by Lucas Felipe</p>
-    </div>
-                
-    <div style="display: flex; justify-content: center; gap: 20px;">
-        <a href="https://github.com/lucasfelipecastro" target="_blank">
-            <img src="https://img.icons8.com/?size=100&id=12599&format=png&color=000000" width="80" alt="GitHub">
-        </a>
-        <a href="https://www.linkedin.com/in/lucasfelipecastro" target="_blank">
-            <img src="https://img.icons8.com/?size=100&id=8808&format=png&color=000000" width="80" alt="LinkedIn">
-        </a>
-    </div>
-                """, unsafe_allow_html=True)
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="font-size: 19px; color: white;"><b>Developed by Lucas Felipe</b></p>
+            <a href="https://github.com/lucasfelipecastro" target="_blank">
+                <img src="https://img.icons8.com/ios-glyphs/90/ffffff/github.png" width="50" alt="GitHub">
+            </a>
+            &nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/lucasfelipecastro" target="_blank">
+                <img src="https://img.icons8.com/ios-glyphs/90/ffffff/linkedin.png" width="50" alt="LinkedIn">
+            </a>
+        </div>
+    """, unsafe_allow_html=True)
     
 def add_background():    
     st.markdown(f"""
